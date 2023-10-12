@@ -31,7 +31,7 @@ public class App {
                     deleteCat(userSelection, catalog);
                     break;
                 case "f":
-                    findCats(userSelection, catalog);
+                    findCat(userSelection, catalog);
                     break;
                 case "l":
                     listAllCats(catalog);
@@ -63,6 +63,32 @@ public class App {
 
     }
     
+    public static void createCat(Scanner userSelection, BigCatCatalog catalog) {
+        System.out.println("Please enter the cat's name: ");
+        String catName = userSelection.nextLine();
+        System.out.print("Please enter the cat's species (Tiger, Lion, or Jaquar): ");
+        String catSpecies = userSelection.nextLine();
+
+        catalog.createCat(catName, catSpecies);
     }
+
+    public static void deleteCat(Scanner userSelection, BigCatCatalog catalog) {
+        System.out.print("Please enter the name of the cat that you would like to delete: ");
+        String catToDelete = userSelection.nextLine();
+
+        catalog.deleteCat(catToDelete);
+    }
+
+    public static void findCat(Scanner userSelection, BigCatCatalog catalog) {
+        System.out.print("Enter a the cat's name or part of the cat's name: ");
+        String searchTerm = userSelection.nextLine();
+
+        catalog.findCats(searchTerm);
+    }
+
+    public static void listAllCats(BigCatCatalog catalog) {
+        catalog.listAllCats();
+    }
+}
 
 

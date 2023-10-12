@@ -25,10 +25,17 @@ public class App {
 
             switch (choice) {
                 case "c":
+                    break;
                 case "d":
+                    break;
                 case "f":
+                    break;
                 case "l":
+                    break;
                 case "q":
+                    quit = true;
+                    System.out.println("Thank you for using the application. Have a great day!");
+                    break;
                 default:
                     System.out.println("Please select one of the options above or Q to quit!");
 
@@ -53,5 +60,5 @@ public class App {
     }
     
     }
-}
+
 

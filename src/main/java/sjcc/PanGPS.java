@@ -2,6 +2,8 @@ package sjcc;
 
 import java.util.Random;
 
+import org.json.JSONObject;
+
 /*
  * Panthera base class that simulates GPS information
  */
@@ -43,23 +45,16 @@ public class PanGPS {
     }
 
     // serializes attributes into a string
+    @Override
     public String toString() {
-        String s;
-
-        // since the object is complex, we return a JSON formatted string
-        s = "{ ";
-        s += "name: " + name;
-        s += ", ";
-        s += "species: " + this.species();
-        s += ", ";
-        s += "longitude: " + this.longitude();
-        s += ", ";
-        s += "latitude: " + this.latitude();
-        s += " }";
-
-        return s;
-
+        JSONObject json = new JSONObject();
+        json.put("name", this.name);
+        json.put("species", this.species());
+        json.put("longitude", this.longitude());
+        json.put("latitude", this.latitude());
+        return json.toString();
     }
+        
 
     // getters
     public String name() {

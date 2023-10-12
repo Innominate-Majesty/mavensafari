@@ -20,17 +20,21 @@ public class App {
 
         boolean quit = false;
         while (!quit) {
-            System.out.print("Enter your choice: ");
+            System.out.print("Enter your command: ");
             String choice = userSelection.nextLine().trim().toLowerCase();
 
             switch (choice) {
                 case "c":
+                    createCat(userSelection, catalog);
                     break;
                 case "d":
+                    deleteCat(userSelection, catalog);
                     break;
                 case "f":
+                    findCats(userSelection, catalog);
                     break;
                 case "l":
+                    listAllCats(catalog);
                     break;
                 case "q":
                     quit = true;

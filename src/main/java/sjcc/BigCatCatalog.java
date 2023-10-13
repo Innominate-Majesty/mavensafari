@@ -2,6 +2,8 @@ package sjcc;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Iterator;
+
 
 public class BigCatCatalog {
     private List<Pan> bigCats;
@@ -28,9 +30,11 @@ public class BigCatCatalog {
 
     //delete cat by name
     public void deleteCat(String name) {
-        for (Pan cat : bigCats) {
+        Iterator<Pan> iterator = bigCats.iterator();
+        while (iterator.hasNext()) {
+            Pan cat = iterator.next();
             if (cat.name().equalsIgnoreCase(name)){
-                bigCats.remove(cat);
+                iterator.remove();
                 System.out.println("Status: " + name + " has been successfully deleted from the catatog");
                 return;
             }

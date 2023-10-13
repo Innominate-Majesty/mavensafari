@@ -19,6 +19,10 @@ public class Pan extends PanGPS {
         this.weight = new Random().nextInt(591) + 10;
     }
 
+    public String getFurColor() {
+        return "Unknown";
+    }
+
     @Override
     public String toString() {
         JSONObject json = new JSONObject();

@@ -1,5 +1,7 @@
 package sjcc;
 
+import org.json.JSONObject;
+
 public class Jaguars extends Pan {
 
     public Jaguars(String name) {
@@ -13,5 +15,12 @@ public class Jaguars extends Pan {
     //Jaguars sleep in trees
     public String funFact() {
         return "Fun fact: jaguars sleep in trees!";
+    }
+
+    @Override
+    public String toString() {
+        JSONObject json = new JSONObject(super.toString());
+        json.put("funFact", this.funFact());
+        return json.toString();
     }
 }

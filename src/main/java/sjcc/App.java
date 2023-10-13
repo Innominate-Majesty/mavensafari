@@ -1,5 +1,6 @@
 package sjcc;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -10,6 +11,8 @@ import java.util.Scanner;
 
 
 public class App {
+
+    private static ArrayList<Pan> panList = new ArrayList<>();
     public static void main(String[] args) {
         
         Scanner userSelection = new Scanner (System.in);
@@ -52,7 +55,7 @@ public class App {
     public static void printDisplay() {
         System.out.println("  ");
         System.out.println("****************************************\n");
-        System.out.println("    Safari with Venus   \n");
+        System.out.println("         Safari with Venus   \n");
         System.out.println("****************************************\n");
         System.out.println("c    :    [C]reate a big cat]");
         System.out.println("d    :    [D]elete a big cat]");
@@ -61,6 +64,22 @@ public class App {
         System.out.println("q    :    [Q]uit");
         System.out.println("****************************************\n");
 
+    }
+
+    private static void displayPanList() {
+        System.out.println("****************************************\n");
+        System.out.println("         Big Cat Catalog   \n");
+        System.out.println("****************************************\n");
+
+        //printing the cats in order of creation
+        for (int i = 0; i < panList.size(); i++) {
+            Pan pan = panList.get(i);
+            String output = String.format("#%04d %s", i + 1, pan.toString());
+            System.out.println(output);
+        }
+
+        System.out.println("****************************************\n");
+                                
     }
     
     public static void createCat(Scanner userSelection, BigCatCatalog catalog) {

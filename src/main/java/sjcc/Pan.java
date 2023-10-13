@@ -29,19 +29,19 @@ public class Pan extends PanGPS {
         String s;
 
         s = "{ ";
-        s += "\"name\"" + this.name() + "\"";
+        s += "\"name\": \"" + this.name() + "\"";
         s += ", ";
-        s += "\"species\"" + this.species() + "\"";
+        s += "\"species\": \"" + this.species() + "\"";
         s += ", ";
-        s += "\"fur\"" + this.getFurColor() + "\"";
+        s += "\"fur\": \"" + this.getFurColor() + "\"";
         s += ", ";
-        s += "\"weight\"" + this.weight() + "\"";
+        s += "\"weight\": \"" + this.weight() + "\"";
         s += ", ";
-        s += "\"speed\"" + this.speed() + "\"";
+        s += "\"speed\": \"" + this.speed() + "\"";
         s += ", ";
-        s += "\"latitude\"" + this.latitude() + "\"";
+        s += "\"latitude\": \"" + this.latitude() + "\"";
         s += ", ";
-        s += "\"longitude\"" + this.longitude() + "\"";
+        s += "\"longitude\": \"" + this.longitude() + "\"";
         s += " }";
 
         return s;

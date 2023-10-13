@@ -19,8 +19,18 @@ public class Jaguars extends Pan {
 
     @Override
     public String toString() {
-        JSONObject json = new JSONObject(super.toString());
-        json.put("funFact", this.funFact());
-        return json.toString();
+        String s = super.toString();
+
+        s = s.substring(0, s.length() - 2);
+
+        s += ", ";
+        s += "\"funFact\": \"" + this.funFact() + "\"";
+        s += " }";
+
+        return s;
+        
+        // JSONObject json = new JSONObject(super.toString());
+        // json.put("funFact", this.funFact());
+        // return json.toString();
     }
 }

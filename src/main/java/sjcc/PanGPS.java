@@ -30,7 +30,7 @@ public class PanGPS {
 
         // initialize attributes
         this.name = name;
-        this.species = "PanGPS";
+        this.species = species;
 
         // seed the random number generators for repeatable results
         this.longitudeRandom = new Random();

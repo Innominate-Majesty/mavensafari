@@ -6,6 +6,7 @@ public class Lions extends Pan{
         super(name, "Lion");
     }
 
+    @Override
     public String getFurColor() {
         return "mane";
     }

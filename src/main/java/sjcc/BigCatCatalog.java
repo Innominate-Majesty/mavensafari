@@ -31,7 +31,7 @@ public class BigCatCatalog {
         for (Pan cat : bigCats) {
             if (cat.name().equalsIgnoreCase(name)){
                 bigCats.remove(cat);
-                System.out.println(name + " has been successfully deleted from the catatog");
+                System.out.println("Status: " + name + " has been successfully deleted from the catatog");
                 return;
             }
 
@@ -52,10 +52,10 @@ public class BigCatCatalog {
         return foundCats;
     }
 
-    public void listAllCats() {
-        for (Pan cat : bigCats) {
-            System.out.println(cat.toString());
-        }
+    public List<Pan> getAllCats() {
+        return new ArrayList<>(bigCats);
     }
+
 }
+
 

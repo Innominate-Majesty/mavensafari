@@ -1,6 +1,7 @@
 package sjcc;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -12,10 +13,9 @@ import java.util.Scanner;
 
 public class App {
 
-    private static ArrayList<Pan> panList = new ArrayList<>();
     public static void main(String[] args) {
         
-        Scanner userSelection = new Scanner (System.in);
+        Scanner userSelection = new Scanner(System.in);
 
         BigCatCatalog catalog = new BigCatCatalog();
 
@@ -37,7 +37,7 @@ public class App {
                     findCat(userSelection, catalog);
                     break;
                 case "l":
-                    listAllCats(catalog);
+                    displayPanList(catalog);
                     break;
                 case "q":
                     quit = true;
@@ -66,14 +66,15 @@ public class App {
 
     }
 
-    private static void displayPanList() {
+    private static void displayPanList(BigCatCatalog catalog) {
         System.out.println("****************************************\n");
         System.out.println("         Big Cat Catalog   \n");
         System.out.println("****************************************\n");
 
         //printing the cats in order of creation
-        for (int i = 0; i < panList.size(); i++) {
-            Pan pan = panList.get(i);
+        List<Pan> allCats = catalog.getAllCats();
+        for (int i = 0; i < allCats.size(); i++) {
+            Pan pan = allCats.get(i);
             String output = String.format("#%04d %s", i + 1, pan.toString());
             System.out.println(output);
         }
@@ -85,8 +86,15 @@ public class App {
     public static void createCat(Scanner userSelection, BigCatCatalog catalog) {
         System.out.println("Please enter the cat's name: ");
         String catName = userSelection.nextLine();
-        System.out.print("Please enter the cat's species (Tiger, Lion, or Jaquar): ");
+        System.out.print("Please enter the cat's species (Tiger, Lion, or Jaguar): ");
         String catSpecies = userSelection.nextLine();
+
+        if (!catSpecies.equalsIgnoreCase("Tiger") && !catSpecies.equalsIgnoreCase("Lion")
+                && !catSpecies.equalsIgnoreCase("Jaguar")) {
+            System.out.println("Please choice either Tiger, Lion, or Jaguar as the species for this cat!");
+            return;
+        }
+            
 
         catalog.createCat(catName, catSpecies);
     }
@@ -102,12 +110,20 @@ public class App {
         System.out.print("Enter a the cat's name or part of the cat's name: ");
         String searchTerm = userSelection.nextLine();
 
-        catalog.findCats(searchTerm);
+        List<Pan> foundCats = catalog.findCats(searchTerm);
+
+        if (foundCats.isEmpty()) {
+            System.out.println("There are no cats in the catalog. Please add some cats");
+        }
+        else {
+            System.out.println("Here are some cats that were found: ");
+            for (Pan pan : foundCats) {
+                System.out.println(pan.toString());
+            }
+        }
+
     }
 
-    public static void listAllCats(BigCatCatalog catalog) {
-        catalog.listAllCats();
-    }
 }
 
 

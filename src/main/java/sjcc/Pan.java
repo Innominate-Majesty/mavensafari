@@ -38,6 +38,11 @@ public class Pan extends PanGPS {
     public String name() {
         return this.name;
     }
+
+    //species() method
+    public String species() {
+        return this.species;
+    }
     
     //roar() method
     public void roar() {

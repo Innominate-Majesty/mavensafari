@@ -6,7 +6,7 @@ public class Lions extends Pan{
         super(name, "Lion");
     }
 
-    public String furs() {
+    public String getFurColor() {
         return "mane";
     }
 }

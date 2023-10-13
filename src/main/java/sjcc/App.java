@@ -52,7 +52,7 @@ public class App {
     public static void printDisplay() {
         System.out.println("  ");
         System.out.println("****************************************\n");
-        System.out.println("    Big Cat Catalog by Venus   \n");
+        System.out.println("    Safari with Venus   \n");
         System.out.println("****************************************\n");
         System.out.println("c    :    [C]reate a big cat]");
         System.out.println("d    :    [D]elete a big cat]");

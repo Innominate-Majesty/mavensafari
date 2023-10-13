@@ -1,8 +1,8 @@
 package sjcc;
 
-public class Jaquars extends Pan {
+public class Jaguars extends Pan {
 
-    public Jaquars(String name) {
+    public Jaguars(String name) {
         super(name, "Jaquar");
     }
 

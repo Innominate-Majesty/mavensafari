@@ -48,8 +48,6 @@ public class PanGPS {
     @Override
     public String toString() {
         JSONObject json = new JSONObject();
-        json.put("name", this.name);
-        json.put("species", this.species());
         json.put("longitude", this.longitude());
         json.put("latitude", this.latitude());
         return json.toString();

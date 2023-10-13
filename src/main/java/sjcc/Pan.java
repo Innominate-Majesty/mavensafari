@@ -1,6 +1,8 @@
 package sjcc;
 
 import java.util.Random;
+import org.json.JSONObject;
+
 
 public class Pan extends PanGPS {
     
@@ -17,8 +19,18 @@ public class Pan extends PanGPS {
         this.weight = new Random().nextInt(591) + 10;
     }
 
-    //name() method
     @Override
+    public String toString() {
+        JSONObject json = new JSONObject();
+        json.put("name", this.name());
+        json.put("species", this.species());
+        json.put("weight", this.weight());
+        json.put("speed", this.speed());
+        json.put("fur", this.getFurColor());
+        json.put("location", super.toString());
+        return json.toString();
+    }
+    //name() method
     public String name() {
         return this.name;
     }

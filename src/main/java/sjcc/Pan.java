@@ -25,15 +25,43 @@ public class Pan extends PanGPS {
 
     @Override
     public String toString() {
-        JSONObject json = new JSONObject();
-        json.put("name", this.name());
-        json.put("species", this.species());
-        json.put("weight", this.weight());
-        json.put("speed", this.speed());
-        json.put("fur", this.getFurColor());
-        json.put("location", super.toString());
-        return json.toString();
+
+        String s;
+
+        s = "{ ";
+        s += "\"name\"" + this.name() + "\"";
+        s += ", ";
+        s += "\"species\"" + this.species() + "\"";
+        s += ", ";
+        s += "\"fur\"" + this.getFurColor() + "\"";
+        s += ", ";
+        s += "\"weight\"" + this.weight() + "\"";
+        s += ", ";
+        s += "\"speed\"" + this.speed() + "\"";
+        s += ", ";
+        s += "\"latitude\"" + this.latitude() + "\"";
+        s += ", ";
+        s += "\"longitude\"" + this.longitude() + "\"";
+        s += " }";
+
+        return s;
+
+        //using the json library won't make it print in order
+        // JSONObject json = new JSONObject();
+        // json.put("name", this.name());
+        // json.put("species", this.species());
+        // json.put("fur", this.getFurColor());
+        // json.put("weight", this.weight());
+        // json.put("speed", this.speed());
+        // json.put("latitude", this.latitude());
+        // json.put("longitude", this.longitude());
+
+        // return json.toString();
+
+        // return String.format("%s (species: %s) - Fur: %s, Weight: %d, Speed: %.2f, Location: (%.2f, %.2f)",
+        // this.name(), this.species(), this.getFurColor(), this.weight, this.speed(), this.latitude(), this.longitude());
     }
+
     //name() method
     public String name() {
         return this.name;

@@ -1,6 +1,5 @@
 package sjcc;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -41,10 +40,10 @@ public class App {
                     break;
                 case "q":
                     quit = true;
-                    System.out.println("Thank you for using the application. Have a great day!");
+                    System.out.println("Thank you for using the application. Have a great day!\n");
                     break;
                 default:
-                    System.out.println("Please select one of the options above or Q to quit!");
+                    System.out.println("Please select one of the options above or Q to quit!\n");
 
             }
         }
@@ -61,7 +60,7 @@ public class App {
         System.out.println("d    :    [D]elete a big cat]");
         System.out.println("f    :    [F]ind a big cat");
         System.out.println("l    :    [L]ist all big cats");
-        System.out.println("q    :    [Q]uit");
+        System.out.println("q    :    [Q]uit\n");
         System.out.println("****************************************\n");
 
     }
@@ -91,7 +90,7 @@ public class App {
 
         if (!catSpecies.equalsIgnoreCase("Tiger") && !catSpecies.equalsIgnoreCase("Lion")
                 && !catSpecies.equalsIgnoreCase("Jaguar")) {
-            System.out.println("Please choice either Tiger, Lion, or Jaguar as the species for this cat!");
+            System.out.println("Please choice either Tiger, Lion, or Jaguar as the species for this cat!\n");
             return;
         }
             
@@ -113,10 +112,10 @@ public class App {
         List<Pan> foundCats = catalog.findCats(searchTerm);
 
         if (foundCats.isEmpty()) {
-            System.out.println("There are no cats in the catalog. Please add some cats");
+            System.out.println("There are no cats in the catalog. Please add some cats\n");
         }
         else {
-            System.out.println("Here are some cats that were found: ");
+            System.out.println("Here are some cats that were found: \n");
             for (Pan pan : foundCats) {
                 System.out.println(pan.toString());
             }
